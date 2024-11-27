@@ -3,15 +3,10 @@ const overlayElem = document.getElementById("overlay-div");
 const imgElem = document.getElementById("img-in-modal");
 const btnCloseElem = document.getElementById("btnCloseOverlay");
 
-// CREO UN ARRAY VUOTO, DOVE POI ANDRO' A INSERIRE LE FOTO ESTRATTE DALL'API
-let photo = [];
-
 // CHIAMIAMO API
 axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=6`).then((resp) => {
-    // ASSEGNO LE RISPOSTE DELL'API ALLA VARIABILE CREATA
-    photo = resp.data;
-    // console.log(photo)
-    addPhoto(photo);
+    // RICHIAMO LA FUNZIONE SOTTOSTANTE, PER POTERLA ESEGUIRE
+    addPhoto(resp.data);
     // PRENDO TUTTE LE IMMAGINI DELLE CARDS stringHTML E LE METTO IN UN NUOVO ARRAY, DOPO DEVO AGGIUNGERE LA FUNZIONE OVERLAY
     const imgArray = document.querySelectorAll(".card img");
     // FACCIO IL CICLO FOR PER CICLARE UN IMMAGINE ALLA VOLTA

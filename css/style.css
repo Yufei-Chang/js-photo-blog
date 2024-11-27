@@ -3,14 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main {
+    background-image: url("../img/cork.png");
+    font-family: "Sometype Mono", monospace;
+}
   
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url("../img/wall.png");
-    /* DEBUG */
-    border: 1px solid green;
 }
 
 .h1 {
@@ -18,31 +21,21 @@
     font-family: "Edu TAS Beginner", cursive;
 }
 
-.container {
+#overlay-div {
     height: 100vh;
-    background-image: url("../img/cork.png");
-}
-
-.card-section {
-    width: 90%;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #modal-div {
+    background-color: white;
     margin: 0 auto;
-    font-family: "Sometype Mono", monospace;
-    /* DEBUG */
-    border: 1px solid black;
-}
-
-.col {
+  }
+  
+  #img-in-modal {
     width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-    .col {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 1280px) {
-    .col {
-        width: 33.33%;
-    }
-}
+    height: 300px;
+    object-fit: cover;
+  }
